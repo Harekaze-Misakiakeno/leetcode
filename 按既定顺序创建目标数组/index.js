@@ -78,22 +78,40 @@
  * 思路二
  * 由于越后面的插入，会使前面插入的向后移动
  * index从后往前遍历，比起序号大与等于的序号都加一
+ * 
+ * 之后如果有重复的，重复前面的+1
+ * 
+ * 未通过
  */
-var createTargetArray = function(nums, index) {
-  for(let i = index.length - 1; i >= 0 ; i--){
-    for(let k = i - 1; k >= 0 ; k--){
-      if( index[k] >= index[i]){
-        index[k] ++;
-      }
-    }
-  }
-  var target = [];
-  for(let i in index){
-    target[index[i]] = nums[i];
-  }
-  return target;
-};
+// var createTargetArray = function(nums, index) {
+//   for(let i = index.length - 1; i >= 0 ; i--){
+//     for(let k = i - 1; k >= 0 ; k--){
+//       if( index[k] >= index[i]){
+//         index[k] ++;
+//       }
+//     }
+//   }
+//   while (new Set(index).size !== index.length){
+//     for(let i = index.length - 1; i >= 0 ; i--){
+//       for(let k = i - 1; k >= 0 ; k--){
+//         if( index[k] === index[i]){
+//           index[k] ++;
+//         }
+//       }
+//     }
+//     console.log(index.toString())
+//   }
+
+//   var target = [];
+//   for(let i in index){
+//     target[index[i]] = nums[i];
+//   }
+//   return target;
+// };
 
 
 // console.log(createTargetArray([0,1,2,3,4], [0,1,2,2,1]))
-console.log(createTargetArray([1,2,3,4,0],[0,1,2,3,0]))
+// console.log(createTargetArray([4,2,4,3,2],[0,0,1,3,1]))
+console.log(createTargetArray([5,11,1,1,15,13,17,10,11,7,13,9,1,14,8,12,12,10,10]
+,[0,0,2,1,3,0,2,1,6,8,2,4,4,1,5,3,11,4,7]).toString())
+// 无法通过
