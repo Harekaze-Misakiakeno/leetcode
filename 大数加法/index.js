@@ -23,8 +23,10 @@ var big_add = function(number1, number2){
     let temp = parseInt(number1[i]) + add
     add = parseInt(temp/10)
     result.push(parseInt(temp%10))
-    console.log(number1)
-
+    // console.log(number1)
+  }
+  if(add !== 0){
+    result.push(parseInt(add))
   }
   // console.log(number1 , number2)
   return result.reverse().join("")
@@ -32,4 +34,4 @@ var big_add = function(number1, number2){
 
 // reverse()
 // console.log(big_add("123", "789"))
-console.log(big_add("99999999999", "1"))
+// console.log(big_add("999", "100000"))

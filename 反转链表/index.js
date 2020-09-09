@@ -38,13 +38,30 @@ g.next = h;
  * function ListNode(val) {
  *     this.val = val;
  *     this.next = null;
+ * 
  * }
  */
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
 /**
  * @param {ListNode} head
- * @return {ListNode}
+ * @return {ListNode} 
+ * 思路一：就这样
  */
 var reverseList = function(head) {
-
+  if((!head && typeof(head) !== "undefined" && head !== 0)){
+    return head
+  }
+  let result_node = new ListNode(head.val);
+  while(!(!head.next && typeof(head.next) !== "undefined" && head.next !== 0)){
+    let node = new ListNode(head.next.val);
+    node.next = result_node;
+    result_node = node;
+    head = head.next;
+  }
+  return result_node;
 };
 
+console.log(reverseList(a).val)
