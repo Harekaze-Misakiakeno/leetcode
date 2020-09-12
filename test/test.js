@@ -1,8 +1,30 @@
-for (var i = 0; i <= 5; i++) {
-    setTimeout(() => {
-        console.log(i);
-    }, 500);
+
+var isNull = null;
+var isUndefined = undefined;
+var a = 1;
+
+var judgeType = function (value) {
+  if(!(!value && typeof(value) !== "undefined" && value !== 0)){
+    console.log("is not null");
+  }else {
+    console.log("null")
+  }
+  if(!(typeof(value) === "undefined")){
+    console.log("is not undefined");
+  }else{
+    console.log("undefined")
+  }
+  
 }
+
+judgeType(a);
+
+
+// for (var i = 0; i <= 5; i++) {
+//     setTimeout(() => {
+//         console.log(i);
+//     }, 500);
+// }
 
 
 // console.log(999.9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
