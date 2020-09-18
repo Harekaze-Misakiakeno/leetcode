@@ -1,21 +1,121 @@
-
-function globalTest() {
-  this.name = "global this";
-  console.log(this.name);
-}
-globalTest(); //global this
-
-console.log(this.name)
-
-var fun1 = function(){
-  console.log(this)
-}
 fun1()
-var fun2 = () =>{
-  console.log(this)
+function fun1(){
+  console.log(1)
 }
-fun2()
-console.log(this)
+
+// const test_obj = {
+//   value: 10,
+//   func: function() {
+//     value = 1
+//     var a = function (){
+//       value = 2
+//       return this.value;
+//     }
+//     return a();
+//   },
+// };
+
+// console.log(test_obj.func());
+
+// var obj = {
+//   birth: 1900,
+//   getAge: function (callback) {
+//     birth = 1910
+//     var fn = function(callback){
+//       birth = 1920
+//       var fu1 = function(callback){
+//         birth = 1930
+//         return callback()
+//       }
+//       return fu1(callback)
+//     }
+//     return fn(callback)
+//   }
+// };
+// console.log(obj.getAge(function(){
+//   birth = 1940
+//   return 2020 - this.birth
+// }))
+
+
+// var obj = {
+//   birth: 1990,
+//   getAge: function () {
+//     var fn = () => new Date().getFullYear() - this.birth; // this指向obj对象
+//     return fn();
+//   }
+// };
+// console.log(obj.getAge())
+
+// var f1 = () => {
+//   return this
+// }
+// var f2 = function(){
+//   return this
+// }
+
+// console.log(f1())
+// console.log(f1() === this)
+// console.log(f2())
+// console.log(f2() === globalThis)
+
+// var name = function () {
+//   this.name = "Akeno";
+// }
+// var obj = new name();
+// console.log(obj.name);
+
+// var test_fun = function(){
+//   this.value = 100;
+//   return value
+// }
+// console.log(test_fun())
+// console.log(value)
+// console.log(this.value)
+
+// const test_obj = {
+//   value: 10,
+//   func: function(x) {
+//     value = 1
+//     var a = function (){
+//       this.value = 2
+//       return value;
+//     }
+//     x(a(this.value))
+//     return this.value;
+//   },
+// };
+// value = 100
+// console.log(test_obj.func((value)=>{
+//   console.log(this.value)
+// }));
+// console.log(this.value)
+// module.exports = test_obj
+
+
+// expected output: 42
+// var test = function(){this.name = "name"}
+// console.log(this.name)
+// test()
+// console.log(this.name)
+// console.log(this)
+// function globalTest() {
+//   this.name = "global this";
+//   console.log(this.name);
+// }
+// globalTest(); //global this
+
+// console.log(this.name)
+
+// var fun1 = function(){
+//   console.log(this)
+// }
+// fun1()
+// var fun2 = () =>{
+//   console.log(this)
+// }
+// fun2()
+// console.log(this)
 
 // // Document.querySelector().add
 
