@@ -1,18 +1,74 @@
-// es5
-function Point(x, y) {
-  this.x = x;
-  this.y = y;
-  this.toString = function () {
-  return '(' + this.x + ', ' + this.y + ')';
-};
+class A {
+  constructor() {
+    this.p = 2;
+  }
 }
 
+class B extends A {
+  get m() {
+    return this.p;
+  }
+}
 
-console.log(typeof(Point)) 
-// function
-console.log(Point === Point.prototype.constructor)
-// true
-console.log(Point(1, 2).toString())
+let b = new B();
+console.log(b.m) // undefined
+
+// var x = new Foo(1, 2)
+// console.log(x.a)
+
+// var add = function(){
+//   this.x = 0;
+//   this.getx = function(){
+//     return this.x++
+//   }
+// }
+// a = new add(1)
+// console.log(a.getx())
+// console.log(a.getx())
+// console.log(a.getx())
+// var a = function(){
+//   let x = 10
+//   console.log(x)
+// }
+// var x = 100
+// // a.x = 100
+// a()
+
+// class IncreasingCounter {
+//   #count = 0;
+//   get value() {
+//     console.log('Getting the current value!');
+//     return this.#count;
+//   }
+//   increment() {
+//     this.#count++;
+//   }
+// }
+// var test = new IncreasingCounter()
+// // console.log(test.#count)
+// console.log(test.count)
+// console.log(test.value)
+
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+
+//   static distance(a, b) {
+//     const dx = a.x - b.x;
+//     const dy = a.y - b.y;
+
+//     return Math.hypot(dx, dy);
+//   }
+// }
+
+// const p1 = new Point(5, 5);
+// const p2 = new Point(10, 10);
+
+// console.log(Point.distance(p1, p2));
+
+// console.log(Math.hypot(5, 5))
 
 // function Product(name, price) {
 //   this.name = name;
