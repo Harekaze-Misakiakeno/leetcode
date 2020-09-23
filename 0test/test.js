@@ -1,17 +1,72 @@
-class A {
-  constructor() {
-    this.p = 2;
-  }
-}
 
-class B extends A {
-  get m() {
-    return this.p;
-  }
-}
+// function Food(name) {
+//   this.name = name || "null";
+//   this.category = 'food';
+//   this.what = function(){
+//     console.log("This is " + this.category);
+//   }
+//   this.eat = function(){
+//     console.log("I would like to eat " + this.name);
+//   }
+//   return this;
+// }
 
-let b = new B();
-console.log(b.m) // undefined
+// function Weapon(name) {
+//   this.name = name || "null";
+//   this.category = 'weapon';
+//   this.what = function(){
+//     console.log("This is " + this.category);
+//   }
+//   this.attack = function(){
+//     console.log("I will attack you with " + this.name);
+//   }
+//   return this;
+// }
+
+// // let food = new Food("taiyaki")
+// Food.call(Weapon(), "Sword").attack()
+
+// function Food(name) {
+//   this.name = name || "null";
+//   // this.category = 'food';
+//   // this.what = function(){
+//   //   console.log("This is " + this.category)
+//   // }
+//   // this.eat = function(){
+//   //   console.log("I would like to eat " + this.name)
+//   // }
+//   console.log("I would like to eat " + this.name);
+// }
+
+// // class Food {
+// //   constructor(name){
+// //     this.name = name
+// //   this.category = 'food';
+// //   }
+// //   what(){
+// //     console.log("This is " + this.category)
+// //   }
+// //   eat(){
+// //     console.log("I would like to eat " + this.name)
+// //   }
+// // }
+
+// function Weapon(name) {
+//   this.name = name || "null";
+//   // this.category = 'weapon';
+//   // this.what = function(){
+//   //   console.log("This is " + this.category)
+//   // }
+//   // this.attack = function(){
+//   //   console.log("I will attack you with " + this.name)
+//   // }
+//   console.log("I will attack you with " + this.name)
+// }
+
+// // let food = new Food("taiyaki")
+// Food.call(Weapon(), "Sword")
+
+
 
 // var x = new Foo(1, 2)
 // console.log(x.a)
