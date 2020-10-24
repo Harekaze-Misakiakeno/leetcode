@@ -4,16 +4,82 @@
     <meta charset="utf-8"/>
   </head>
   <body>
-    <button id="test">
+    <!-- <button id="test">
       click me
-    </button>
+    </button> -->
+    <form action="">
+      <div class="form-item">
+        <label class="required">username</label>
+        <input type="text" maxlength="10" id="from-item-0"/>
+      </div>
+      <br/>
+      <label>password</label>
+      <input type="password" maxlength="10" />
+      <br/>
+      <input type="submit" value="sbmit"/>
+    </form>
+    
   </body>
+  <style>
+form{
+  width: 500px;
+  padding: 40px;
+  margin: 50px;
+}
+
+/* #from-item-0{
+
+} */
+
+.form-item {
+  width: 90%;
+  height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+form > label.required:before{
+  display: inline-block;
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-family: SimSun,sans-serif;
+  line-height: 1;
+  content: "*";
+}
+  </style>
   <script>
     window.onload = function(){
-      fun1()
-      function fun1(){
-        console.log(1)
-      }
+      // fun1()
+      // function fun1(){
+      //   console.log(1)
+      // }
+      document.querySelector('#from-item-0').addEventListener('focus', function(){
+        console.log("fcous")
+      })
+      document.querySelector('#from-item-0').addEventListener('blur', function(){
+        console.log("blur")
+      })
+      document.querySelector('#from-item-0').addEventListener('click', function(){
+        console.log("click")
+      })
+      // document.querySelector('#from-item-0').addEventListener('mouseleave', function(){
+      //   console.log("mouseleave")
+      // })
+      document.querySelector('#from-item-0').addEventListener('mouseout', function(){
+        console.log("mouseout")
+      })
+      // mouseout
+      console.log(!document.querySelector('#from-item-0-0'))
+      let a
+      console.log(!a)
     }
+    // focus	元素获得焦点（不会冒泡）。
+    // blur
+    // submit
+    // click
+    // mouseleave
+    // mouseout
   </script>
 </html>
