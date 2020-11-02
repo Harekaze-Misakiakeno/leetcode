@@ -1,4 +1,42 @@
+var data = `BBCBC,BBCCC,BDCAC,CDDDD,CDCAB,CDCAB,AAAAC,CAAAC,CDCAD,CDDCC,BADAD,BDDAC,CBCCA,CBABA,CBBBC,BBBAC,CBDDB,DBACB,AACAB,AACCA,ADCDB,CACBD,ABAAD,CCABB,CBCCC,CBCCC,BCADD,ABBCC,ABCCA,DBCCB,DDABC,DDCBB,ACCDD,ADDBD,BAAAB,BABAB,DCACB,DDACB,DDDAA,DBBAA,CCADC,CCADC,DBCCD,DBCCC,CBDAC,BDBDC,CCACB,DCBCC,ACCDB,BBDCC`
 
+var t = function(){
+  let dd = data.split(',');
+  console.log(dd)
+  let result = 0;
+  for(let i = 0; i < dd.length; i = i +2){
+    if(i < 40 /5){
+      result += pi(dd[i], dd[i + 1]) * 0.5
+      console.log(result)
+    }else if (i < 120 / 5){
+      result += pi(dd[i], dd[i + 1]) * 0.7
+      console.log(result)
+    }else if (i < 150 / 5){
+      result += pi(dd[i], dd[i + 1])
+      console.log(result)
+    }else if (i < 200 / 5){
+      result += pi(dd[i], dd[i + 1]) * 0.7
+      console.log(result)
+    }else{
+      result += pi(dd[i], dd[i + 1]) 
+      console.log(result)
+    }
+  }
+  return result
+}
+var pi = function(ar1, ar2) {
+  
+  let res = 0;
+  for(let i = 0; i < 5; i++){
+    console.log("==" + ar1[i] + " " + ar2[i] + "==")
+    if(ar1[i] == ar2[i]){
+      res ++
+    }
+  }
+  console.log(res)
+  return res;
+}
+console.log(t())
 // function Food(name) {
 //   this.name = name || "null";
 //   this.category = 'food';
