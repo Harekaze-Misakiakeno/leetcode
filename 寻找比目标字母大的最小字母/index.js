@@ -49,13 +49,55 @@
 // 链接：https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target
 // 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
+// /**
+//  * @param {character[]} letters
+//  * @param {character} target
+//  * @return {character}
+//  */
+// var nextGreatestLetter = function(letters, target) {
+
+// };
+
 /**
  * @param {character[]} letters
  * @param {character} target
  * @return {character}
+ * 思路一：二分查找
  */
 var nextGreatestLetter = function(letters, target) {
-  let start = 0, end = letters.length
+  let start = 0, end = letters.length - 1;
+  let mid = parseInt(end / 2);
+  if(target > letters[end] || target < letters[start]){
+      return letters[start]
+  }
+  let result = letters[0];
+  while(start <= end){
+      if(target < letters[mid]) {
+          result = letters[mid];
+          end = mid - 1;
+          mid = parseInt((start + end) / 2);
+      }else { // target >= letters[mid]
+          start = mid + 1;
+          mid = parseInt((start + end) / 2);
+      }
+  }
+  return result
 };
 
+/**
+ * @param {character[]} letters
+ * @param {character} target
+ * @return {character}
+ * 思路二：线性扫描
+ */
+var nextGreatestLetter = function(letters, target) {
+  letters = Array.from(new Set(letters));
+  for(let i of letters){
+      if(i > target){
+          return i
+      }
+  }
+  return letters[0]
+};
 
+// 此外还有 记录存在的字母 的方法
