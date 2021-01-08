@@ -18,8 +18,156 @@
       <br/>
       <input type="submit" value="sbmit"/>
     </form>
-    
+    <!-- <div id="pp">
+      <p id="ppp">1</p>
+      <p>2</p>
+      <p>3</p>
+    </div> -->
+    <ul>
+      <li></li>
+    </ul>
   </body>
+  <script>
+    <!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style>
+			.mui-badge_my {
+						padding: 0px;
+						width: 12%;
+						float: right;
+						line-height: 42px;
+						font-size: 14px;
+					}
+					
+					.my_select a:after {
+						font-size: 19px;
+						margin-top: 2px;
+						margin-right: -6px;
+}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				plus.navigator.setStatusBarBackground("#7BABF6");
+			});
+		</script>
+		<header class="mui-bar mui-bar-nav" style="background: #7BABF6;"></span>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#000;"></a>
+			<h1 class="mui-title">用户注册</h1>
+		</header>
+		<div class="mui-content">
+			<!--上传照片-->
+			<center>
+				<div id="msg" style="border:1px solid #E6E6E6;">
+					<!-- <img src="images/kuang.jpg" /> -->
+				</div>
+				<button type="button" id="camera" class="mui-btn" style="width:200px;border:none;background: #7BABF6;color:white;margin-top: 10px;">拍
+					照</button>
+			</center>
+			<!--上传照片-->
+
+			<form class="mui-input-group" style="margin-top: 10px;;">
+				<div class="mui-input-row">
+					<label>姓名*</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入姓名">
+				</div>
+				<!--性别-->
+				<div class="mui-input-row   my_select">
+					<label style="width: 100px;padding-right: 0;font-size: 16px;">性别*</label>
+					<a class="mui-navigate-right ">
+						<span class="mui-badge_my">
+							<select class="mui-h5" style="margin:auto; color:#000;
+				                                     font-size: 16px;color: #999999;
+				                                     ">
+								<option value="1">男</option>
+								<option value="0">女</option>
+							</select>
+						</span>
+					</a>
+				</div>
+				<!--性别-->
+				<!--年龄-->
+				<div class="mui-input-row">
+					<label>年龄</label>
+					<input type="text" class="mui-input-clear" placeholder="">
+				</div>
+				<!--年龄-->
+
+				<!--电话-->
+				<div class="mui-input-row">
+					<label>电话号码</label>
+					<input type="text" class="mui-input-clear" placeholder="">
+				</div>
+				<!--电话-->
+
+				<!--密码-->
+				<!-- <div class="mui-input-row">
+					<label>输入密码*</label>
+					<input type="password" class="mui-input-password" placeholder="请输入密码">
+				</div> -->
+				<!--密码-->
+
+				<!--确认密码-->
+				<!-- <div class="mui-input-row">
+					<label>确认密码*</label>
+					<input type="password" class="mui-input-password" placeholder="请再次确认密码">
+				</div> -->
+				<!--确认密码-->
+
+				<!--账号-->
+				<!-- <div class="mui-input-row">
+					<label>账户（选填）</label>
+					<input type="text" class="mui-input-clear" placeholder="">
+				</div> -->
+				<!--账号-->
+
+				<!--住址-->
+				<!-- <div class="mui-input-row">
+					<label>住址</label>
+					<input type="text" class="mui-input-clear" placeholder="">
+				</div> -->
+				<!--住址-->
+				<div class="mui-button-row">
+					<button onclick="returnvip()" type="button" class="mui-btn " style="width:200px;border: none;color:white;font-size16px;background:#7BABF6">提交</button>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			let msgDom = document.getElementById("msg");
+			let cmDom = document.getElementById("camera");
+			
+			function uploadHeadImg(imgPath){
+				
+				// let domImage = document.getElementById("myImages")
+				let domImage = document.createElement('img');
+				// image.crossOrigin = '';
+				domImage.src = imgPath;
+				domImage.width = 225;
+				domImage.height = 300;
+				
+				console.log(domImage.src)
+				imgWidth = domImage.width;
+				imgHeight = domImage.height;
+				// var canvas = null;
+				canvas = document.createElement("canvas");
+				var ctx = canvas.getContext("2d");
+				canvas.width = imgWidth;
+				canvas.height = imgHeight;
+				// ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.drawImage(domImage, 0, 0, canvas.width, canvas.height);
+				msgDom.appendChild(canvas)
+			}
+  </script>
   <style>
 form{
   width: 500px;
@@ -51,6 +199,17 @@ form > label.required:before{
   </style>
   <script>
     window.onload = function(){
+
+      let p1 = document.getElementById("pp");
+      // let p2 = document.querySelector("#pp p");
+      // // console.log(p1.length, p2.length)
+      // p1.appendChild(document.createElement("p"))
+      // p1.setAttribute("id", "ppp")
+      // console.log(p1)
+      // console.log(p2)
+      // let p3 = document.getElementById("ppp");
+      // console.log(p3)
+
       // fun1()
       // function fun1(){
       //   console.log(1)
@@ -71,9 +230,27 @@ form > label.required:before{
         console.log("mouseout")
       })
       // mouseout
-      console.log(!document.querySelector('#from-item-0-0'))
-      let a
-      console.log(!a)
+      // console.log(!document.querySelector('#from-item-0-0'))
+      // let a
+      // console.log(!a)
+
+
+
+      var ul = document.querySelector('ul');
+      var list = ul.querySelectorAll('li');
+      for(var i = 0; i < 3; i++){
+          ul.appendChild(document.createElement('li'));
+      }
+      console.log(list.length)
+      // 输出 1
+
+      // var ul = document.getElementsByTagName('ul')[0];
+      // var list = ul.getElementsByTagName('li');
+      // for(var i = 0; i < 3; i++){
+      //     ul.appendChild(document.createElement('li'));
+      // }
+      // console.log(list.length)
+      // // 输出 4
     }
     // focus	元素获得焦点（不会冒泡）。
     // blur

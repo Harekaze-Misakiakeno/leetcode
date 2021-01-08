@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="msg" style="border:1px solid #E6E6E6; width: 225px;height: 300px;">
+    
+  </div>
+  <img src="https://tse2-mm.cn.bing.net/th/id/OIP.pNwTTlAeaQCWXTIsgdHTFwHaHa?pid=Api&rs=1" width="225" height="300" id="myImages" />
+</body>
+<script>
+  window.onload = function(){
+    let msgDom = document.getElementById("msg");
+    // let cmDom = document.getElementById("camera");
+    uploadHeadImg()
+    function uploadHeadImg(){
+      
+      // let domImage = document.getElementById("myImages")
+      let domImage = document.createElement('img');
+      // image.crossOrigin = '';
+      domImage.src = "https://tse2-mm.cn.bing.net/th/id/OIP.pNwTTlAeaQCWXTIsgdHTFwHaHa?pid=Api&rs=1";
+      domImage.width = 225;
+      domImage.height = 300;
+      // msgDom.appendChild(domImage)
+      // console.log(domImage.src)
+      imgWidth = domImage.width;
+      imgHeight = domImage.height;
+
+      // var canvas = null;
+      var canvas = document.createElement("canvas");
+      var ctx = canvas.getContext("2d");
+      canvas.width = imgWidth;
+      canvas.height = imgHeight;
+      // ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(domImage, 0, 0, canvas.width, canvas.height);
+      msgDom.appendChild(canvas)
+    }
+  }
+    
+</script>
+</html>
