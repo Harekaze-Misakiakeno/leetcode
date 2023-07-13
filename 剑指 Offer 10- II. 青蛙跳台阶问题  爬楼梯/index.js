@@ -53,13 +53,35 @@
 /**
  * @param {number} n
  * @return {number}
+ * 由于每次都是跳跃都是1个台阶或是2个台阶
+ * 思路：每个 f(n) = f(n-1) + f(n-2)
+ * f(0) = 1
+ * f(1) = 1
+ * 
+ * 结果 超时
+ * 思路应该没错
  */
-var numWays = function(n) {
-  let a = 1, b = 1, sum;
-  for(let i = 0; i < n; i++){
-    sum = (a + b) % 1000000007;
-    a = b;
-    b = sum;
-  }
-  return a;
-};
+// var numWays = function(n) {
+//   let recursive = x =>{
+//     if(x === 1 || x === 0) {
+//       return 1
+//     }
+//     let sum = recursive(x-1)
+//     sum += recursive(x-2)
+//     return sum
+//   }
+//   return recursive(n)
+// };
+
+
+
+
+// var numWays = function(n) {
+//   let a = 1, b = 1, sum;
+//   for(let i = 0; i < n; i++){
+//     sum = (a + b) % 1000000007;
+//     a = b;
+//     b = sum;
+//   }
+//   return a;
+// };
